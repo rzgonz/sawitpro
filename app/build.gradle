@@ -5,14 +5,15 @@ plugins {
 
 android {
     namespace 'com.rzgonz.sawitpro'
-    compileSdk 33
+    compileSdk AppConfig.CompileSdkVersion
 
     defaultConfig {
         applicationId "com.rzgonz.sawitpro"
-        minSdk 21
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        minSdk AppConfig.MinSdkVersion
+        targetSdk AppConfig.TargetSdkVersion
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -47,17 +48,28 @@ android {
 }
 
 dependencies {
+    implementation Libraries.coreKtx
+    implementation Libraries.runtimeKtx
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.2.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    def composeBom = platform(Libraries.composeBom)
+    implementation composeBom
+    androidTestImplementation composeBom
+    implementation Libraries.compose_ui
+    implementation Libraries.compose_material
+    implementation Libraries.compose_material3
+    implementation Libraries.compose_icon
+    implementation Libraries.compose_icon_extended
+    implementation Libraries.compose_activity
+    implementation Libraries.compose_viewModel
+    implementation Libraries.compose_navigation
+    implementation Libraries.compose_glide
+
+    testImplementation(TestLibraries.junit)
+    testImplementation(TestLibraries.faker)
+    androidTestImplementation(InstrumentedTestLibraries.junit)
+    androidTestImplementation(InstrumentedTestLibraries.core)
+    androidTestImplementation Libraries.compose_unitTest
+    androidTestImplementation Libraries.compose_navigation_test
+    debugImplementation Libraries.compose_tooling
+    debugImplementation Libraries.compose_manifestTest
 }
