@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -63,6 +64,14 @@ dependencies {
     implementation Libraries.compose_viewModel
     implementation Libraries.compose_navigation
     implementation Libraries.compose_glide
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.2.3')
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation "com.google.accompanist:accompanist-permissions:0.29.1-alpha"
+    implementation 'com.google.firebase:firebase-database-ktx'
+    // To recognize Latin script
+    implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
 
     testImplementation(TestLibraries.junit)
     testImplementation(TestLibraries.faker)

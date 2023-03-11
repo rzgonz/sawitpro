@@ -12,5 +12,6 @@ screen sizes and densities statistics.
 ### Architecture Framework : MVVM, Clean Architecture
 ### Dependencies Injection  : Koin
 ### Library : Google Maps, Google Vision, Firebase Database
+### Library Image : Glide
 
 

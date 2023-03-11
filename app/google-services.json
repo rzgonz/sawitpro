@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "85965879115",
+    "firebase_url": "https://elite-variety-726.firebaseio.com",
+    "project_id": "elite-variety-726",
+    "storage_bucket": "elite-variety-726.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85965879115:android:0ea8a56afe96e8133c1ace",
+        "android_client_info": {
+          "package_name": "com.example.sample_amarta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV6Sk9DDCOH-mT_jimJqfj-Ll6x46xrjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85965879115-4cjhn2mgbbk8qlrpcok8agn4pgh7tev9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sampleAmarta"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85965879115:android:71140e254afe58ba3c1ace",
+        "android_client_info": {
+          "package_name": "com.rz.account"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85965879115-b7on7jjk5i6eetad36ql7hv5o4ab1b8m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rz.account",
+            "certificate_hash": "418b35ddf35d82bf7317c1ea46cac72942d2eaba"
+          }
+        },
+        {
+          "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV6Sk9DDCOH-mT_jimJqfj-Ll6x46xrjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85965879115-4cjhn2mgbbk8qlrpcok8agn4pgh7tev9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sampleAmarta"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85965879115:android:9f8a96723c62ed893c1ace",
+        "android_client_info": {
+          "package_name": "com.rzgonz.sawitpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV6Sk9DDCOH-mT_jimJqfj-Ll6x46xrjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85965879115-iqcoli960engl8blfplemec92qj83hdt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85965879115-4cjhn2mgbbk8qlrpcok8agn4pgh7tev9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sampleAmarta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

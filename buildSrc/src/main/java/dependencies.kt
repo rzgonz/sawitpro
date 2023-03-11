@@ -163,7 +163,7 @@ object Libraries {
     const val compose_iconExtended =
         "androidx.compose.material:material-icons-extended"
 
-    const val compose_navigation = "androidx.navigation:navigation-compose"
+    const val compose_navigation = "androidx.navigation:navigation-compose:2.4.0-rc01"
     const val compose_navigation_animation = "com.google.accompanist:accompanist-navigation-animation"
     const val compose_navigation_test = "androidx.navigation:navigation-testing:2.5.3"
     const val compose_glide = "com.github.bumptech.glide:compose:1.0.0-alpha.1"
