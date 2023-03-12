@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -65,6 +66,10 @@ dependencies {
     implementation Libraries.compose_navigation
     implementation Libraries.compose_glide
 
+
+    implementation Libraries.koinCompose
+    implementation Libraries.koin
+
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.3')
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -72,6 +77,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     // To recognize Latin script
     implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
+
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.maps.android:maps-compose:2.11.0'
 
     testImplementation(TestLibraries.junit)
     testImplementation(TestLibraries.faker)

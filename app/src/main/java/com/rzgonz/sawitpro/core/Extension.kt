@@ -1,5 +1,9 @@
 package com.rzgonz.sawitpro.core
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
 import android.util.Log
 
 
@@ -26,6 +30,15 @@ fun Float?.orZero(): Float = this ?: 0F
 fun Double?.orZero(): Double = this ?: 0.0
 
 fun Boolean?.orFalse(): Boolean = this ?: false
+
+fun Context.navigateToAppSettings() {
+    this.startActivity(
+        Intent(
+            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+            Uri.fromParts("package", this.packageName, null)
+        )
+    )
+}
 
 
 
