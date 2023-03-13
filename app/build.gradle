@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
@@ -21,6 +22,12 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        Properties properties = new Properties()
+        if (rootProject.file("local.properties").exists()) {
+            properties.load(rootProject.file("local.properties").newDataInputStream())
+        }
+        resValue "string", "MAPS_API_KEY", properties.getProperty("MAPS_API_KEY", "")
     }
 
     buildTypes {
@@ -65,10 +72,19 @@ dependencies {
     implementation Libraries.compose_viewModel
     implementation Libraries.compose_navigation
     implementation Libraries.compose_glide
+    implementation Libraries.kotlinCoroutines
 
 
     implementation Libraries.koinCompose
     implementation Libraries.koin
+
+    //network
+    implementation(Libraries.gson)
+    implementation(Libraries.retrofit)
+    implementation(Libraries.retrofitRxJava)
+    implementation(Libraries.retrofitGson)
+    implementation(Libraries.okHttp3Log)
+    implementation(Libraries.okHttp3)
 
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.3')
@@ -77,7 +93,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     // To recognize Latin script
     implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
-
+    implementation 'com.google.maps:google-maps-services:2.1.2'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.maps.android:maps-compose:2.11.0'
 

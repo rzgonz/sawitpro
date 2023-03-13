@@ -1,10 +1,15 @@
 package com.rzgonz.sawitpro.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
@@ -26,6 +31,15 @@ private val LightColorPalette = lightColors(
     onSurface = Color.Black,
     */
 )
+
+@Composable
+fun DefaultBackground() = Brush.linearGradient(
+    0f to MaterialTheme.colors.primary,
+    1f to Color(0xfff0f0f0),
+    start = Offset(180f, 0f),
+    end = Offset(180f, 1012.78f)
+)
+
 
 @Composable
 fun SawitProTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {

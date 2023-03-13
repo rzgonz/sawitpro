@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import android.util.Log
+import android.widget.Toast
 
 
 inline fun <reified T : Any> logD(s: String) = Log.d(tag<T>(), s)
@@ -38,6 +39,10 @@ fun Context.navigateToAppSettings() {
             Uri.fromParts("package", this.packageName, null)
         )
     )
+}
+
+fun Context.showMessage(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
 

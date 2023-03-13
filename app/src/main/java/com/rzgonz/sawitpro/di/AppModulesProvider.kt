@@ -10,12 +10,16 @@ class AppModulesProvider private constructor() {
         get() {
             return ArrayList<Module>().apply {
                 addAll(appProvider)
+                addAll(networkModules)
             }
         }
 
 
     private val appProvider by lazy {
         AppProvider.getInstance().modules
+    }
+    private val networkModules by lazy {
+        NetworkProvider.getInstance().modules
     }
 
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SawitPro</string>
+    <string name="common_text_calculating_process">Calculating please waiting</string>
 </resources>
