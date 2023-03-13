@@ -78,18 +78,15 @@ class SawitPresistace() {
                         if (item != null) {
                             listOcr.add(item)
                         }
-//                        logD<SawitPresistace>("ayam ${itemSnapShot.key}")
-//                        logD<SawitPresistace>("ayam 2 ${itemSnapShot.value}")
-//                        logD<SawitPresistace>("ayam 3 ${ocrItem}")
                     }
-                    trySend(Resource.Success(listOcr)).isSuccess
+
+                    trySend(Resource.Success(listOcr.reversed())).isSuccess
                 }
 
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.w("SawitProOcrDto", "Failed to read value.")
-                trySend(Resource.Error<List<SawitProOcrDao>>(error = error.message)).isFailure
+                trySend(Resource.Error(error = error.message)).isFailure
             }
         })
 
