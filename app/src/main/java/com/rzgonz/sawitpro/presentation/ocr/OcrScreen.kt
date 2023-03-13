@@ -120,8 +120,9 @@ fun OcrScreen(
                 val origin = LatLng(location.latitude, location.longitude)
                 ocrViewModel.originLatLong.value = origin
                 logD<OcrViewModel>("GPS Lat ${origin.latitude} ,Long ${origin.longitude}")
-                if (ocrViewModel.inputFoto.value != null) {
-                    val context = GeoApiContext.Builder().apply {
+                if (ocrViewModel.inputFoto.value != null
+                ) {
+                    val mapsContext = GeoApiContext.Builder().apply {
                         apiKey(context.getString(R.string.MAPS_API_KEY))
                     }.build()
 
@@ -129,7 +130,7 @@ fun OcrScreen(
                     val destination =
                         arrayOf("${LOCATION_PLAZA_INDONESIA.latitude},${LOCATION_PLAZA_INDONESIA.longitude}")
                     val request = DistanceMatrixApi.getDistanceMatrix(
-                        context,
+                        mapsContext,
                         originAddress,
                         destination
                     )
@@ -144,9 +145,11 @@ fun OcrScreen(
                             logD<OcrViewModel>("Distance: ${matrix.distance} Duration :${matrix.duration.humanReadable} --> ${matrix.duration.inSeconds}")
                         }
                     }
-                    //  locationCallback?.let { fusedLocationClient?.removeLocationUpdates(it) }
-//                    fusedLocationClient = null;
-//                    locationCallback = null;
+                    if (ocrViewModel.state.value.ocrProgressAsync is Success) {
+                        locationCallback?.let { fusedLocationClient?.removeLocationUpdates(it) }
+                        fusedLocationClient = null;
+                        locationCallback = null;
+                    }
                 }
             }
         }

@@ -88,13 +88,14 @@ class OcrViewModel(
                         .addOnSuccessListener { visionText ->
                             // Task completed successfully
                             // ...
-                            logD<OcrViewModel>("OCR value ${visionText.text}")
-                            _state.update { it.copy(ocrProgressAsync = Success(visionText.text)) }
-                            ocrText.value = TextFieldValue(visionText.text)
                             inputDistance.value =
                                 TextFieldValue(context.getString(R.string.common_text_calculating_process))
                             inputDuration.value =
                                 TextFieldValue(context.getString(R.string.common_text_calculating_process))
+                            logD<OcrViewModel>("OCR value ${visionText.text}")
+                            _state.update { it.copy(ocrProgressAsync = Success(visionText.text)) }
+                            ocrText.value = TextFieldValue(visionText.text)
+
                         }
                         .addOnFailureListener { e ->
                             // Task failed with an exception
