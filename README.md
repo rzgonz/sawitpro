@@ -1,6 +1,9 @@
 
 # Preview Sawit Pro Apps Sample
-
+<video width="320" height="240" autoplay>
+  <source src="assets/movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ## Min SDK Version
 
